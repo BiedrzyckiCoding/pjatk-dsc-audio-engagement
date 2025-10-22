@@ -37,8 +37,8 @@ except ImportError:
     from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Ścieżki
-TRAIN_PATH = Path("data/train.csv")
-TEST_PATH = Path("data/test.csv")
+TRAIN_PATH = Path("data-task/train.csv")
+TEST_PATH = Path("data-task/test.csv")
 
 # Wczytaj dane
 train = pd.read_csv(TRAIN_PATH)
@@ -599,8 +599,8 @@ for feat in sorted(new_features)[:20]:
 # ## 1️⃣8️⃣ Zapisanie przetworzonych danych
 
 # %%
-output_train = Path("data/train_final_features.csv")
-output_test = Path("data/test_final_features.csv")
+output_train = Path("data-task/train_final_features.csv")
+output_test = Path("data-task/test_final_features.csv")
 
 train.to_csv(output_train, index=False)
 test.to_csv(output_test, index=False)
@@ -741,7 +741,7 @@ print("📊 LEADERBOARD MODELI")
 print(f"{'='*60}")
 print(leaderboard[['model', 'score_val', 'score_test', 'pred_time_val', 'fit_time']])
 
-best_model = predictor.get_model_best()
+best_model = predictor.leaderboard(silent=True).iloc[0]['model']
 print(f"\n🏆 Najlepszy model: {best_model}")
 
 best_rmse = abs(leaderboard['score_val'].iloc[0])
