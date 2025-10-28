@@ -1,0 +1,33 @@
+# Core Data Science Libraries
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Statistical Analysis
+scipy>=1.9.0
+
+# Machine Learning - Scikit-learn
+scikit-learn>=1.2.0
+
+# AutoGluon (Main ML Framework)
+autogluon.tabular>=0.8.0
+
+# Natural Language Processing
+sentence-transformers>=2.2.0
+
+# Deep Learning Backend (required by sentence-transformers)
+torch>=2.0.0
+transformers>=4.30.0
+
+# Additional Utilities
+pathlib2>=2.3.7  # For older Python versions, built-in for Python 3.4+
+
+# Optional but recommended
+jupyter>=1.0.0
+notebook>=6.5.0
+ipykernel>=6.20.0
+
+# For better progress visualization
+tqdm>=4.65.0
+
+# For handling warnings
+warnings  # Built-in Python module
